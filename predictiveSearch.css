@@ -1,0 +1,163 @@
+.rm53-predictive-search.input-group {
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    background-color: #fff;
+    width: 100%;
+}
+.rm53-predictive-search.input-group.rm53-input-group-focused {
+    border-color: #66afe9;
+}
+.rm53-predictive-search input.form-control {
+    border-radius: 0;
+    border: 0;
+    min-width: 114px;
+    box-shadow: none;
+}
+
+.rm53-predictive-search .input-group-btn {
+    background-color: #fff;
+}
+.rm53-predictive-search .input-group-btn button.btn {
+    background-color: #fff;
+    border: 0;
+    border-left: 1px solid #CCC;
+    color: #999;
+    cursor: text;
+    font-size: 14px;
+    opacity: 1;
+    padding: 0 10px;
+}
+.rm53-invalid-search-text input.form-control {
+    color: #ff0000;
+}
+.rm53-invalid-search-text + .help-block.rm53-error-text {
+    display: block;
+}
+.rm53-invalid-search-text .no-results.custom-popup-wrapper {
+    display: none!important;
+}
+.rm53-predictive-search .custom-popup-wrapper {
+    border: 1px solid #66afe9;
+    border-top-color: #ccc;
+    border-bottom-right-radius: 2px;
+    border-bottom-left-radius: 2px;
+    background-color: #fff;
+    box-sizing: content-box;
+    left: -1px!important;
+    margin-top: 0;
+    max-height: 250px;
+    overflow-y: scroll;
+    padding: 0;
+    position: absolute;
+    width: 100%;
+    top: 100%;
+    z-index: 1030;
+}
+.rm53-predictive-search .custom-popup-wrapper.no-results {
+    overflow-y: auto;
+    z-index: 1029;
+}
+.rm53-predictive-search .custom-popup-wrapper.no-results li {
+    padding: 7px 10px;
+}
+.rm53-predictive-search .custom-popup-wrapper > .message {
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+    color: #868686;
+}
+.rm53-predictive-search .custom-popup-wrapper > .dropdown-menu {
+    position: static;
+    float: none;
+    display: block;
+    min-width: 160px;
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 0;
+    margin: 0;
+}
+.rm53-predictive-search .custom-popup-wrapper > .dropdown-menu > li {
+    font-size: 1em;
+    font-weight: 600;
+}
+.rm53-predictive-search .custom-popup-wrapper > .dropdown-menu > li > a {
+    color: #333;
+    padding: 7px 10px;
+    white-space: normal;
+}
+.rm53-predictive-search .custom-popup-wrapper > .dropdown-menu > li > a:hover,
+.rm53-predictive-search .custom-popup-wrapper > .dropdown-menu > li.active  a {
+    background-color: #cbe1ff;
+}
+.rm53-predictive-search  .custom-popup-wrapper > .dropdown-menu > li > a {
+    border-top: 1px solid #ccc;
+}
+.rm53-predictive-search  .custom-popup-wrapper > .dropdown-menu > li > a strong {
+    color: #2c62e3;
+}
+.rm53-predictive-search .custom-popup-wrapper > .dropdown-menu > li:first-child > a {
+    border-top: 0;
+}
+.rm53-predictive-search .custom-popup-wrapper > .dropdown-menu > li > a.child {
+    padding-left: 20px;
+}
+.rm53-predictive-search .custom-popup-wrapper > .dropdown-menu > li > a.parent {
+    font-weight: 700;
+}
+.rm53-predictive-search .custom-popup-wrapper > .dropdown-menu > .active > a,
+.rm53-predictive-search .custom-popup-wrapper > .dropdown-menu > .active > a:focus,
+.rm53-predictive-search .custom-popup-wrapper > .dropdown-menu > .active > a:hover {
+    color: initial;
+}
+.rm53-predictive-search .custom-popup-wrapper > .dropdown-menu > li .rm53-relationship-match-type {
+    color: #666;
+    float: right;
+    font-weight: 600;
+}
+.rm53-predictive-search .cssload-container {
+    height: 30px;
+    margin: 0;
+}
+.rm53-predictive-search .cssload-speeding-wheel {
+    height: 30px;
+    width: 30px;
+}
+/* Mulit Select */
+.rm53-predictive-search ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.rm53-predictive-search .rm53-predictive-search-item-wrapper {
+    display: block;
+    float: left;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    padding: 0 8px;
+    color: #666;
+    font-weight: 600;
+    background-color: #e4e4e4;
+    margin: 5px 5px 0 5px;
+}
+.rm53-predictive-search .rm53-predictive-search-item-wrapper .rm53-close-button {
+    padding-right: 0;
+    border: 0;
+    background: none;
+    padding: 0 0 0px 3px;
+    margin: 0;
+    -webkit-appearance: none;
+    font-family: inherit;
+    font-size: 0.7em;
+}
+.rm53-predictive-search .rm53-predictive-search-item-wrapper:hover,
+.rm53-predictive-search .rm53-predictive-search-item-wrapper:focus {
+    color: #cc0000;
+    border-color: #666666;
+    background-color: #ffffff;
+    cursor: pointer;
+}
+.rm53-predictive-search .rm53-predictive-search-item-wrapper.rm53-invalid-item {
+
+}
+/* End Predictive Search */

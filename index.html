@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="example">
+<head>
+    <meta charset="UTF-8">
+    <title>Predictive Search Example</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="predictiveSearch.css"/>
+</head>
+<body>
+    <div ng-controller="ExampleController as vm">
+        <div class="row">
+            <div class="col-xs-9">
+                <div class="form-group">
+                    <label for="predictiveSearch">Select Teams</label>
+                    <rm53-predictive-search
+                            name="predictiveSearch"
+                            search-placeholder="Search..."
+                            clear-on-blur="false"
+                            multi-select="true"
+                            view-value="vm.searchInputValue"
+                            selected-items="vm.selectedSearchItems"
+                            source="vm.searchData"
+                            loading="vm.searchLoading"
+                            min-length="2"></rm53-predictive-search>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src="ui-bootstrap-custom-tpls-2.0.0.min.js"></script>
+    <script src="predictiveSearch.directive.js"></script>
+    <script src="example.module.js"></script>
+</body>
+</html>
