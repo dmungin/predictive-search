@@ -1,8 +1,8 @@
 angular.module('dmPredictiveSearch.directive', [
     ])
-    .directive('rm53PredictiveSearch', predictiveSearchDirective)
-    .directive('rm53PredictiveSearchItem', predictiveSearchItemDirective)
-    .directive('rm53InputAutosize', inputAutosizeDirective)
+    .directive('dmPredictiveSearch', predictiveSearchDirective)
+    .directive('dmPredictiveSearchItem', predictiveSearchItemDirective)
+    .directive('dmInputAutosize', inputAutosizeDirective)
     .controller('PredictiveSearchController', PredictiveSearchController);
 
 predictiveSearchDirective.$inject = [];
@@ -56,12 +56,12 @@ function predictiveSearchDirective() {
             input[0].focus();
         });
         input.on('focus', function() {
-            wrapper.addClass('rm53-input-group-focused');
+            wrapper.addClass('dm-input-group-focused');
         });
         input.on('blur', function() {
-            wrapper.removeClass('rm53-input-group-focused');
+            wrapper.removeClass('dm-input-group-focused');
             if(!angular.isDefined(scope.psvm.clearOnBlur) || scope.psvm.clearOnBlur === 'true') {
-                element.removeClass('rm53-invalid-search-text');
+                element.removeClass('dm-invalid-search-text');
                 input.val('');
             }
 
@@ -69,14 +69,19 @@ function predictiveSearchDirective() {
         input.on('keydown', handleKeyDownEvent);
         function handleKeyDownEvent(event) {
             var keyCode = event.keyCode;
-            element.removeClass('rm53-invalid-search-text');
+            element.removeClass('dm-invalid-search-text');
             if(keyCode === 13 || keyCode === 9 && scope.psvm.matches.length === 0) {
-                element.removeClass('rm53-invalid-search-text');
+                element.removeClass('dm-invalid-search-text');
                 if(input.val().length > 0) {
                     event.preventDefault();
                     if(typeof scope.psvm.validator !== 'function' || scope.psvm.validator({value: input.val()})) {
-                        var customItem = {};
-                        customItem[scope.psvm.selectedItemDisplayProperty] = input.val();
+                        if(angular.isDefined(scope.psvm.selectedItemDisplayProperty)) {
+                            var customItem = {};
+                            customItem[scope.psvm.selectedItemDisplayProperty] = input.val();
+                        } else {
+                            var customItem = input.val();
+                        }
+
                         scope.$apply(function() {
                             scope.psvm.addSelectedItem(customItem);
                             input.val('');
@@ -84,7 +89,7 @@ function predictiveSearchDirective() {
                         });
                     }
                     else {
-                        element.addClass('rm53-invalid-search-text');
+                        element.addClass('dm-invalid-search-text');
                     }
 
                 }
@@ -98,7 +103,7 @@ predictiveSearchItemDirective.$inject = [];
 function predictiveSearchItemDirective() {
     return {
         restrict: 'E',
-        require: '^rm53PredictiveSearch',
+        require: '^dmPredictiveSearch',
         scope: {
             data: '='
         },

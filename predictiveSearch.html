@@ -1,7 +1,7 @@
-<div class="input-group rm53-predictive-search">
+<div class="input-group dm-predictive-search">
     <ul ng-if="psvm.multiSelect && psvm.selectedItems.length > 0">
-        <li ng-repeat="item in psvm.selectedItems" class="rm53-predictive-search-item-wrapper" ng-class="{'rm53-invalid-item': item.isValid}">
-            <rm53-predictive-search-item data="item"></rm53-predictive-search-item>
+        <li ng-repeat="item in psvm.selectedItems" class="dm-predictive-search-item-wrapper" ng-class="{'dm-invalid-item': item.isValid}">
+            <dm-predictive-search-item data="item"></dm-predictive-search-item>
         </li>
     </ul>
     <input  type="text"
@@ -14,7 +14,7 @@
             ng-change="psvm.matches.length = 0"
             ng-focus="psvm.focus = true"
             ng-blur="psvm.focus = false"
-            rm53-input-autosize
+            dm-input-autosize
             uib-typeahead="searchMatch for searchMatch in psvm.getMatches()"
             typeahead-on-select="psvm.addSelectedItem($item, $model, $label, $event, false)"
             typeahead-popup-template-url="typeahead/popup/default.html"
@@ -39,18 +39,18 @@
 
 <script type="text/ng-template" id="predictiveSearch/selectedItem/default.html">
     <span ng-bind="getDisplayText()"></span>
-    <button class="rm53-close-button" ng-click="removeTag()"><i class="glyphicon glyphicon-remove" aria-hidden="true"></i><span class="sr-only">Remove Item</span></button>
+    <button class="dm-close-button" ng-click="removeTag()"><i class="glyphicon glyphicon-remove" aria-hidden="true"></i><span class="sr-only">Remove Item</span></button>
 </script>
 
 <script type="text/ng-template" id="typeahead/match/relationship.html">
-    <a href="" class="rm53-relationship-match" ng-class="{'child': match.model.isChild, 'parent': !match.model.isChild}">
-        <span class="rm53-relationship-match-company" ng-bind-html="match.model.company | properNoun | uibTypeaheadHighlight:query"></span>
-        <span class="rm53-relationship-match-type" ng-if="match.model.companyType"><i> {{match.model.companyType | lowercase}}</i></span>
+    <a href="" class="dm-relationship-match" ng-class="{'child': match.model.isChild, 'parent': !match.model.isChild}">
+        <span class="dm-relationship-match-company" ng-bind-html="match.model.company | properNoun | uibTypeaheadHighlight:query"></span>
+        <span class="dm-relationship-match-type" ng-if="match.model.companyType"><i> {{match.model.companyType | lowercase}}</i></span>
     </a>
 </script>
 <script type="text/ng-template" id="typeahead/match/employee.html">
-    <a href="" class="rm53-employee-match">
-        <span class="rm53-employee-match-name" ng-bind-html="match.model.fullName | properNoun | uibTypeaheadHighlight:query"></span>
+    <a href="" class="dm-employee-match">
+        <span class="dm-employee-match-name" ng-bind-html="match.model.fullName | properNoun | uibTypeaheadHighlight:query"></span>
     </a>
 </script>
 <script type="text/ng-template" id="typeahead/popup/default.html">
@@ -60,7 +60,7 @@
          ng-show="isOpen() && !moveInProgress"
          aria-hidden="{{!isOpen()}}">
         <ul class="dropdown-menu" role="listbox">
-            <li class="rm53-predictive-search-match"
+            <li class="dm-predictive-search-match"
                 ng-repeat="match in matches track by $index"
                 ng-class="{'active': isActive($index)}"
                 ng-click="selectMatch($index, $event)"
